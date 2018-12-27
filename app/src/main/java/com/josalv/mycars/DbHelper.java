@@ -18,10 +18,12 @@ public class DbHelper extends SQLiteOpenHelper {
                 CarContract.TABLE,
                 CarContract.Column.ID,
                 CarContract.Column.MARCA,
+                CarContract.Column.MODELO,
                 CarContract.Column.TIPO,
                 CarContract.Column.COLOR,
-                CarContract.Column.MATRICULA,
-                CarContract.Column.OWNER);
+                CarContract.Column.DESCRIPCION);
+
+
 
         Log.d(TAG, "onCreate con SQL: " + sql);
         db.execSQL(sql);

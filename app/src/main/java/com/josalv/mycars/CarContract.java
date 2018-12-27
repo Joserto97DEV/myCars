@@ -18,9 +18,9 @@ public class CarContract {
     public class Column {
         public static final String ID = BaseColumns._ID;
         public static final String MARCA = "marca";
+        public static final String MODELO = "modelo";
         public static final String TIPO = "tipo";
         public static final String COLOR = "color";
-        public static final String MATRICULA = "matricula";
-        public static final String OWNER = "owner";
+        public static final String DESCRIPCION = "descripcion";
     }
 }
