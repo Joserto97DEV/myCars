@@ -40,7 +40,7 @@ import android.content.Intent;
 
 
 
-public class StatusFragment extends Fragment implements View.OnClickListener, TextWatcher {
+public class AddCarFragment extends Fragment implements View.OnClickListener, TextWatcher {
 
     private static final String TAG = "FragmentActivity";
 
@@ -114,13 +114,13 @@ public class StatusFragment extends Fragment implements View.OnClickListener, Te
         button_add.setVisibility(View.INVISIBLE);
 
         if(sbrand.isEmpty()||smodel.isEmpty()||scolor.isEmpty()||sdescription.isEmpty()){
-            Toast.makeText(StatusFragment.this.getActivity(), "Es necesario rellenar todos los campos", Toast.LENGTH_LONG).show();
+            Toast.makeText(AddCarFragment.this.getActivity(), "Es necesario rellenar todos los campos", Toast.LENGTH_LONG).show();
         }
 
-        else{
+        /*else{
             new PostTask().execute(status);
 
-        }
+        }*/
 
 
     }
@@ -133,7 +133,7 @@ public class StatusFragment extends Fragment implements View.OnClickListener, Te
         protected String doInBackground(String... params) {
 
 
-
+            return null;
         }
         // Llamada cuando la actividad en background ha terminado
         @Override
