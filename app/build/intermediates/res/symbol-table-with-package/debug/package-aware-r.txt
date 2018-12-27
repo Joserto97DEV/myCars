@@ -702,6 +702,7 @@ id beginning
 id blocking
 id bottom
 id brand
+id button
 id buttonPanel
 id button_add
 id cancel_action
@@ -725,6 +726,7 @@ id description
 id dimensions
 id direct
 id disableHome
+id editText
 id edit_query
 id end
 id end_padder
@@ -814,6 +816,8 @@ id text
 id text2
 id textSpacerNoButtons
 id textSpacerNoTitle
+id textView
+id textView2
 id time
 id title
 id titleDividerNoCustom
@@ -925,6 +929,9 @@ string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
 string app_name
+string askname
+string come_on
+string hello
 string hello_blank_fragment
 string search_menu_title
 string status_bar_notification_info_overflow
@@ -933,6 +940,7 @@ string tipo2
 string tipo3
 string tipo4
 string tipo5
+string user
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog

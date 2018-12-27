@@ -1,7 +1,5 @@
 package com.josalv.mycars;
 
-//Autor: Jose Alberto del Val Acebes
-
 
 
 import android.graphics.Color;
@@ -39,7 +37,10 @@ import android.text.TextUtils;
 import android.content.Intent;
 
 
-
+/**
+ * @author Jose Alberto del Val
+ * @author Alvaro Velasco
+ */
 public class AddCarFragment extends Fragment implements View.OnClickListener, TextWatcher {
 
     private static final String TAG = "FragmentActivity";
@@ -73,13 +74,6 @@ public class AddCarFragment extends Fragment implements View.OnClickListener, Te
         button_add.setOnClickListener(this);
 
         progressBar = (ProgressBar) view.findViewById(R.id.progressBar);
-
-
-
-
-
-
-
 
         return view;
     }

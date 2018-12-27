@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/josealbertodelval/Desktop/PracticaSmov/myCars/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-h720dp-v13/values-h720dp-v13.xml",
+            "outputFile": "/Users/Alvaro/GitHub-workspace/myCars/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-h720dp-v13/values-h720dp-v13.xml",
             "map": [
                 {
-                    "source": "/Users/josealbertodelval/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/d1945b8f38b3055c2a255c87e330ae7f/res/values-h720dp-v13/values-h720dp-v13.xml",
+                    "source": "/Users/Alvaro/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/ed5be74cb189b6006aa676558d67bf7f/res/values-h720dp-v13/values-h720dp-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

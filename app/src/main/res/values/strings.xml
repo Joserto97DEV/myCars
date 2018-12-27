@@ -8,5 +8,9 @@
     <string name="tipo3">Monovolúmen</string>
     <string name="tipo4">Deportivo</string>
     <string name="tipo5">Berlina</string>
+    <string name="user">Albert Einstein</string>
+    <string name="hello">hello!</string>
+    <string name="askname">what\'s your name?</string>
+    <string name="come_on">COME ON!</string>
 
 </resources>
