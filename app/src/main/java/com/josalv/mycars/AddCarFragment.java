@@ -1,9 +1,6 @@
 package com.josalv.mycars;
 
 
-
-import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextWatcher;
 import android.text.Editable;
@@ -12,30 +9,11 @@ import android.widget.EditText;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
-import android.widget.TextView;
 import android.widget.ProgressBar;
 import android.util.Log;
 
-//Comprobación Internet
-import android.content.Context;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
-
-//SnackBar
-
-
-
-
-
 import android.os.AsyncTask;
 import android.app.Fragment;
-
-import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
-
-import android.text.TextUtils;
-import android.content.Intent;
-
 
 /**
  * @author Jose Alberto del Val
@@ -49,9 +27,6 @@ public class AddCarFragment extends Fragment implements View.OnClickListener, Te
     EditText model;
     EditText color;
     EditText description;
-
-    Spinner spynner_type;
-
     Button button_add;
 
 
@@ -100,35 +75,34 @@ public class AddCarFragment extends Fragment implements View.OnClickListener, Te
         String scolor = color.getText().toString();
         String sdescription = description.getText().toString();
 
-
         Log.d(TAG, "onClicked");
-
-        //Mostramos el progressBar al hacer clic
-        progressBar.setVisibility(View.VISIBLE);
-        button_add.setVisibility(View.INVISIBLE);
 
         if(sbrand.isEmpty()||smodel.isEmpty()||scolor.isEmpty()||sdescription.isEmpty()){
             Toast.makeText(AddCarFragment.this.getActivity(), "Es necesario rellenar todos los campos", Toast.LENGTH_LONG).show();
+        } else {
+            //Mostramos el progressBar al hacer clic
+            progressBar.setVisibility(View.VISIBLE);
+            button_add.setVisibility(View.INVISIBLE);
+            new PostTask().execute(sbrand, smodel, scolor, sdescription);
         }
-
-        /*else{
-            new PostTask().execute(status);
-
-        }*/
 
 
     }
 
     // Guardar en la BD de manera asíncrona, igual que hacíamos con twitter
-
     private final class PostTask extends AsyncTask<String, Void, String> {
+
         // Llamada al empezar
         @Override
         protected String doInBackground(String... params) {
+            try {
+            Thread.sleep(2000);}
+            catch(Exception e){
 
-
+            }
             return null;
         }
+
         // Llamada cuando la actividad en background ha terminado
         @Override
         protected void onPostExecute(String result) {
@@ -136,6 +110,7 @@ public class AddCarFragment extends Fragment implements View.OnClickListener, Te
             super.onPostExecute(result);
             progressBar.setVisibility(View.GONE);
             button_add.setVisibility(View.VISIBLE);
+            Toast.makeText(AddCarFragment.this.getActivity(), "Añadido correctamente.", Toast.LENGTH_LONG).show();
         }
     }
 

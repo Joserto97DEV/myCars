@@ -552,6 +552,10 @@
         "source": "/Users/Alvaro/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/ed5be74cb189b6006aa676558d67bf7f/res/drawable-xxhdpi-v4/abc_scrubber_control_to_pressed_mtrl_000.png"
     },
     {
+        "merged": "/Users/Alvaro/GitHub-workspace/myCars/app/build/intermediates/res/merged/debug/layout_fragment_car_list.xml.flat",
+        "source": "/Users/Alvaro/GitHub-workspace/myCars/app/src/main/res/layout/fragment_car_list.xml"
+    },
+    {
         "merged": "/Users/Alvaro/GitHub-workspace/myCars/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_ic_menu_selectall_mtrl_alpha.png.flat",
         "source": "/Users/Alvaro/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/ed5be74cb189b6006aa676558d67bf7f/res/drawable-mdpi-v4/abc_ic_menu_selectall_mtrl_alpha.png"
     },
@@ -806,10 +810,6 @@
     {
         "merged": "/Users/Alvaro/GitHub-workspace/myCars/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_list_selector_disabled_holo_dark.9.png.flat",
         "source": "/Users/Alvaro/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/ed5be74cb189b6006aa676558d67bf7f/res/drawable-hdpi-v4/abc_list_selector_disabled_holo_dark.9.png"
-    },
-    {
-        "merged": "/Users/Alvaro/GitHub-workspace/myCars/app/build/intermediates/res/merged/debug/layout_fragment_list.xml.flat",
-        "source": "/Users/Alvaro/GitHub-workspace/myCars/app/src/main/res/layout/fragment_list.xml"
     },
     {
         "merged": "/Users/Alvaro/GitHub-workspace/myCars/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher.png.flat",
@@ -1070,10 +1070,6 @@
     {
         "merged": "/Users/Alvaro/GitHub-workspace/myCars/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_notification_bg_low_normal.9.png.flat",
         "source": "/Users/Alvaro/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/4d7685798bc8cb4941115b6e10c2506e/res/drawable-mdpi-v4/notification_bg_low_normal.9.png"
-    },
-    {
-        "merged": "/Users/Alvaro/GitHub-workspace/myCars/app/build/intermediates/res/merged/debug/layout_activity_new_user.xml.flat",
-        "source": "/Users/Alvaro/GitHub-workspace/myCars/app/src/main/res/layout/activity_new_user.xml"
     },
     {
         "merged": "/Users/Alvaro/GitHub-workspace/myCars/app/build/intermediates/res/merged/debug/color-v23_abc_tint_edittext.xml.flat",

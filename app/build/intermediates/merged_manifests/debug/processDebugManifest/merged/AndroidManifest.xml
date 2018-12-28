@@ -29,7 +29,6 @@
             </intent-filter>
         </activity>
         <activity android:name="com.josalv.mycars.CarsActivity" />
-        <activity android:name="com.josalv.mycars.NewUser" />
     </application>
 
 </manifest>
