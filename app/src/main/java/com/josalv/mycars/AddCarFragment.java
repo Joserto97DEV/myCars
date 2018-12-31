@@ -26,7 +26,9 @@ public class AddCarFragment extends Fragment implements View.OnClickListener, Te
     EditText brand;
     EditText model;
     EditText color;
+    Spinner tipo;
     EditText description;
+
     Button button_add;
 
 
@@ -43,6 +45,7 @@ public class AddCarFragment extends Fragment implements View.OnClickListener, Te
         brand = (EditText) view.findViewById(R.id.brand);
         model = (EditText) view.findViewById(R.id.model);
         color = (EditText) view.findViewById(R.id.color);
+        tipo = (Spinner) view.findViewById(R.id.spinner_type);
         description = (EditText) view.findViewById(R.id.description);
 
         button_add = (Button) view.findViewById(R.id.button_add);
@@ -73,17 +76,27 @@ public class AddCarFragment extends Fragment implements View.OnClickListener, Te
         String sbrand = brand.getText().toString();
         String smodel = model.getText().toString();
         String scolor = color.getText().toString();
+        String stipo = tipo.getSelectedItem().toString();
         String sdescription = description.getText().toString();
+
+        //ABRIR INSTANCIA DE LA BASE DE DATOS AQUí
 
         Log.d(TAG, "onClicked");
 
         if(sbrand.isEmpty()||smodel.isEmpty()||scolor.isEmpty()||sdescription.isEmpty()){
             Toast.makeText(AddCarFragment.this.getActivity(), "Es necesario rellenar todos los campos", Toast.LENGTH_LONG).show();
         } else {
+
+            String sql = "SELECT * FROM car WHERE MARCA ="+sbrand+"AND MODELO ="+smodel;
+            //db.execSQL(sql);
+
+
+            //IF se encuentra algún resultado de la anteriro consulta, notificar que ya existe, ELSE insertar.
+
             //Mostramos el progressBar al hacer clic
             progressBar.setVisibility(View.VISIBLE);
             button_add.setVisibility(View.INVISIBLE);
-            new PostTask().execute(sbrand, smodel, scolor, sdescription);
+            //new PostTask().execute(sbrand, smodel, scolor, sdescription);
         }
 
 
