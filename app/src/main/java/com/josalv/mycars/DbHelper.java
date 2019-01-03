@@ -1,6 +1,7 @@
 package com.josalv.mycars;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
@@ -35,4 +36,27 @@ public class DbHelper extends SQLiteOpenHelper {
         onCreate(db);
         Log.d(TAG, "onUpgrade");
     }
+
+    public static void saveDb(SQLiteDatabase db, Car car) {
+
+
+
+        //INSERTAR BD
+        String sql = "INSERT INTO car (MARCA, MODELO, TIPO, COLOR, DESCRIPCION) VALUES " +
+                "('" + car.getMarca() + "','" + car.getModelo() + "','"+car.getTipo()+"','"+car.getColor()+"','"+car.getDescripcion()+"') ";
+
+        db.execSQL(sql);
+
+    }
+
+    //Devuelve todos los coches para crear la lista
+
+    public Cursor getAllCars(SQLiteDatabase db) {
+
+        Cursor cursor =  db.rawQuery("SELECT * FROM car",null );
+        return cursor;
+    }
+
+
+
 }

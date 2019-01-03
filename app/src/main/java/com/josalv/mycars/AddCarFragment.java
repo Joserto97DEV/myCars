@@ -78,7 +78,6 @@ public class AddCarFragment extends Fragment implements View.OnClickListener, Te
         String stipo = tipo.getSelectedItem().toString();
         String sdescription = description.getText().toString();
 
-        //ABRIR INSTANCIA DE LA BASE DE DATOS AQUí
         DbHelper cardbh = new DbHelper(getActivity().getApplicationContext());
         SQLiteDatabase db = cardbh.getWritableDatabase();
 
@@ -89,13 +88,10 @@ public class AddCarFragment extends Fragment implements View.OnClickListener, Te
             Toast.makeText(AddCarFragment.this.getActivity(), "Es necesario rellenar todos los campos", Toast.LENGTH_LONG).show();
         } else {
 
-            //INSERTAR BD
-            String sql = "INSERT INTO car (MARCA, MODELO, TIPO, COLOR, DESCRIPCION) VALUES " +
-                    "('" + sbrand + "','" + smodel + "','"+stipo+"','"+scolor+"','"+sdescription+"') ";
-
-            db.execSQL(sql);
+            Car car = new Car(sbrand,smodel,stipo,scolor,sdescription);
 
 
+            DbHelper.saveDb(db,car);
 
 
             //Mostramos el progressBar al hacer clic

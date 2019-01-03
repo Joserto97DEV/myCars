@@ -2,6 +2,10 @@ package com.josalv.mycars;
 
 //Clase que define un objeto coche
 
+import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+
 import java.util.UUID;
 
 public class Car {
