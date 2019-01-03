@@ -89,6 +89,7 @@ public class AddCarFragment extends Fragment implements View.OnClickListener, Te
             Toast.makeText(AddCarFragment.this.getActivity(), "Es necesario rellenar todos los campos", Toast.LENGTH_LONG).show();
         } else {
 
+            //INSERTAR BD
             String sql = "INSERT INTO car (MARCA, MODELO, TIPO, COLOR, DESCRIPCION) VALUES " +
                     "('" + sbrand + "','" + smodel + "','"+stipo+"','"+scolor+"','"+sdescription+"') ";
 
