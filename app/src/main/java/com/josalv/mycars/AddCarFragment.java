@@ -1,6 +1,7 @@
 package com.josalv.mycars;
 
 
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.text.TextWatcher;
 import android.text.Editable;
@@ -28,6 +29,7 @@ public class AddCarFragment extends Fragment implements View.OnClickListener, Te
     EditText color;
     EditText description;
     Button button_add;
+    Spinner tipo;
 
 
     //ProgressBar
@@ -44,7 +46,7 @@ public class AddCarFragment extends Fragment implements View.OnClickListener, Te
         model = (EditText) view.findViewById(R.id.model);
         color = (EditText) view.findViewById(R.id.color);
         description = (EditText) view.findViewById(R.id.description);
-
+        tipo = (Spinner) view.findViewById(R.id.spinner_type);
         button_add = (Button) view.findViewById(R.id.button_add);
         button_add.setOnClickListener(this);
 
@@ -73,13 +75,28 @@ public class AddCarFragment extends Fragment implements View.OnClickListener, Te
         String sbrand = brand.getText().toString();
         String smodel = model.getText().toString();
         String scolor = color.getText().toString();
+        String stipo = tipo.getSelectedItem().toString();
         String sdescription = description.getText().toString();
+
+        //ABRIR INSTANCIA DE LA BASE DE DATOS AQUí
+        DbHelper cardbh = new DbHelper(getActivity().getApplicationContext());
+        SQLiteDatabase db = cardbh.getWritableDatabase();
+
 
         Log.d(TAG, "onClicked");
 
         if(sbrand.isEmpty()||smodel.isEmpty()||scolor.isEmpty()||sdescription.isEmpty()){
             Toast.makeText(AddCarFragment.this.getActivity(), "Es necesario rellenar todos los campos", Toast.LENGTH_LONG).show();
         } else {
+
+            String sql = "INSERT INTO car (MARCA, MODELO, TIPO, COLOR, DESCRIPCION) VALUES " +
+                    "('" + sbrand + "','" + smodel + "','"+stipo+"','"+scolor+"','"+sdescription+"') ";
+
+            db.execSQL(sql);
+
+
+
+
             //Mostramos el progressBar al hacer clic
             progressBar.setVisibility(View.VISIBLE);
             button_add.setVisibility(View.INVISIBLE);
