@@ -1,6 +1,7 @@
 package com.josalv.mycars;
 
 
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.text.TextWatcher;
 import android.text.Editable;
@@ -80,6 +81,9 @@ public class AddCarFragment extends Fragment implements View.OnClickListener, Te
         String sdescription = description.getText().toString();
 
         //ABRIR INSTANCIA DE LA BASE DE DATOS AQUí
+        DbHelper cardbh = new DbHelper(getActivity().getApplicationContext());
+        SQLiteDatabase db = cardbh.getWritableDatabase();
+
 
         Log.d(TAG, "onClicked");
 
@@ -87,16 +91,18 @@ public class AddCarFragment extends Fragment implements View.OnClickListener, Te
             Toast.makeText(AddCarFragment.this.getActivity(), "Es necesario rellenar todos los campos", Toast.LENGTH_LONG).show();
         } else {
 
-            String sql = "SELECT * FROM car WHERE MARCA ="+sbrand+"AND MODELO ="+smodel;
-            //db.execSQL(sql);
+            String sql = "INSERT INTO car (MARCA, MODELO, TIPO, COLOR, DESCRIPCION) VALUES " +
+                    "('" + sbrand + "','" + smodel + "','"+stipo+"','"+scolor+"','"+sdescription+"') ";
+
+            db.execSQL(sql);
 
 
-            //IF se encuentra algún resultado de la anteriro consulta, notificar que ya existe, ELSE insertar.
+
 
             //Mostramos el progressBar al hacer clic
             progressBar.setVisibility(View.VISIBLE);
             button_add.setVisibility(View.INVISIBLE);
-            //new PostTask().execute(sbrand, smodel, scolor, sdescription);
+            new PostTask().execute(sbrand, smodel, scolor, sdescription);
         }
 
 
@@ -124,6 +130,8 @@ public class AddCarFragment extends Fragment implements View.OnClickListener, Te
             progressBar.setVisibility(View.GONE);
             button_add.setVisibility(View.VISIBLE);
             Toast.makeText(AddCarFragment.this.getActivity(), "Añadido correctamente.", Toast.LENGTH_LONG).show();
+            getActivity().setContentView(R.layout.fragment_car_list);
+
         }
     }
 
