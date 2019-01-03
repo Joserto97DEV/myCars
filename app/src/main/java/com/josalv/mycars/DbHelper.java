@@ -47,21 +47,32 @@ public class DbHelper extends SQLiteOpenHelper {
         db.execSQL(sql);
     }
 
-    //Devuelve todos los coches para crear la lista
 
-    public static Car[] getAllCars(SQLiteDatabase db) {
+    /**
+     * Devuelve un arrayList con los coches que hay en la base de datos
+     * @param db base de datos
+     * @return ArrayList con el contenido de coches
+     */
+    public  ArrayList<Car> getAllCars(SQLiteDatabase db) {
+
+
+        System.out.println("\n\n\n GET ALL CARS!! \n\n\n");
+
+
         Cursor cursor =  db.rawQuery("SELECT * FROM car",null );
-        List<Car> cars = new ArrayList();
-        while(cursor.moveToNext()){
+        ArrayList<Car> cars = new ArrayList();
+
+        while(cursor.moveToNext()) {
             cars.add(new Car(cursor.getString(0),
-                                cursor.getString(2),
-                                cursor.getString(3),
-                                cursor.getString(4),
-                                cursor.getString(5)));
+                    cursor.getString(2),
+                    cursor.getString(3),
+                    cursor.getString(4),
+                    cursor.getString(5)));
         }
 
-        Car[] carArray = new Car[cars.size()];
-        return carArray;
+        System.out.println("\n\n\nEL TAMAÑO DE LA BASE DE DATOS ES DE " + cars.size() + " COCHES! \n\n\n");
+
+        return cars;
     }
 
 

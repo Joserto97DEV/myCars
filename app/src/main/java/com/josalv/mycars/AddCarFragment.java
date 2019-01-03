@@ -81,25 +81,18 @@ public class AddCarFragment extends Fragment implements View.OnClickListener, Te
         DbHelper cardbh = new DbHelper(getActivity().getApplicationContext());
         SQLiteDatabase db = cardbh.getWritableDatabase();
 
-
         Log.d(TAG, "onClicked");
 
         if(sbrand.isEmpty()||smodel.isEmpty()||scolor.isEmpty()||sdescription.isEmpty()){
             Toast.makeText(AddCarFragment.this.getActivity(), "Es necesario rellenar todos los campos", Toast.LENGTH_LONG).show();
         } else {
-
             Car car = new Car(sbrand,smodel,stipo,scolor,sdescription);
-
-
             DbHelper.saveDb(db,car);
-
-
             //Mostramos el progressBar al hacer clic
             progressBar.setVisibility(View.VISIBLE);
             button_add.setVisibility(View.INVISIBLE);
             new PostTask().execute(sbrand, smodel, scolor, sdescription);
         }
-
 
     }
 
@@ -125,6 +118,7 @@ public class AddCarFragment extends Fragment implements View.OnClickListener, Te
             progressBar.setVisibility(View.GONE);
             button_add.setVisibility(View.VISIBLE);
             Toast.makeText(AddCarFragment.this.getActivity(), "Añadido correctamente.", Toast.LENGTH_LONG).show();
+
         }
     }
 

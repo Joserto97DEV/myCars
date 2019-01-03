@@ -1,6 +1,7 @@
 package com.josalv.mycars;
 
 import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -55,10 +56,12 @@ public class CarListFragment extends ListFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+        DbHelper cardbh = new DbHelper(getActivity().getApplicationContext());
+        SQLiteDatabase db = cardbh.getWritableDatabase();
+        //Car[] cars = DbHelper.getAllCars(db);
+        //for (Car c: cars){
+
+        //}
     }
 
     @Override
