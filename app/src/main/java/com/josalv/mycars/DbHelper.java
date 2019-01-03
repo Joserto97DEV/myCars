@@ -53,7 +53,7 @@ public class DbHelper extends SQLiteOpenHelper {
      * @param db base de datos
      * @return ArrayList con el contenido de coches
      */
-    public  ArrayList<Car> getAllCars(SQLiteDatabase db) {
+    public static ArrayList<Car> getAllCars(SQLiteDatabase db) {
 
 
         System.out.println("\n\n\n GET ALL CARS!! \n\n\n");
