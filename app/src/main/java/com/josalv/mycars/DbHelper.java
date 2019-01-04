@@ -69,8 +69,30 @@ public class DbHelper extends SQLiteOpenHelper {
                     cursor.getString(4),
                     cursor.getString(5)));
         }
-
         return cars;
+    }
+
+
+    /**
+     * Devuelve el coche que esté en una determinada DB con un determinado ID.
+     * @param db
+     * @param id
+     * @return Car
+     */
+    public static Car findByID(SQLiteDatabase db, String id){
+        String churroSQL = "SELECT * FROM car WHERE car.ID == '"+ id +"';";
+        Cursor cursor =  db.rawQuery(churroSQL,null );
+        Car car = null;
+
+        if (cursor.moveToFirst()) {
+
+            car = new Car(cursor.getString(1),
+                    cursor.getString(2),
+                    cursor.getString(3),
+                    cursor.getString(4),
+                    cursor.getString(5));
+        }
+        return car;
     }
 
 
