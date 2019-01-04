@@ -38,7 +38,7 @@
                 android:textAppearance="?textAppearanceListItem"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                tools:text="Seat" />
+                tools:text="Marca" />
 
             <TextView
                 android:id="@+id/tvColor"
@@ -51,7 +51,7 @@
                 android:textAppearance="?textAppearanceListItem"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                tools:text="Rojo" />
+                tools:text="Color" />
 
             <TextView
                 android:id="@+id/tvTipo"
@@ -63,7 +63,7 @@
                 android:textAppearance="?textAppearanceListItem"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                tools:text="berlina" />
+                tools:text="Tipo" />
 
             <Space
                 android:layout_width="wrap_content"
@@ -81,7 +81,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/tvDescripcion"
+                android:text="@string/descripcion"
                 android:textAlignment="center" />
         </TableRow>
 

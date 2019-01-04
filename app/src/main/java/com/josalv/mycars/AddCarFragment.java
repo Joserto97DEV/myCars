@@ -70,8 +70,13 @@ public class AddCarFragment extends Fragment implements View.OnClickListener, Te
 
     }
 
-    // Función llamada al pulsar el botón
+    /**
+     * Al ejecutar el boton, si los campos están rellenos, se guarda un nuevo coche en la base de datos.
+     * @param v vista
+     */
+
     public void onClick(View v) {
+        // Obtenemos los valores del formulario
         String sbrand = brand.getText().toString();
         String smodel = model.getText().toString();
         String scolor = color.getText().toString();
@@ -96,7 +101,9 @@ public class AddCarFragment extends Fragment implements View.OnClickListener, Te
 
     }
 
-    // Guardar en la BD de manera asíncrona, igual que hacíamos con twitter
+    /**
+     * Guarda de manera asincrona en la base de datos e informa si ha acabado.
+     */
     private final class PostTask extends AsyncTask<String, Void, String> {
 
         // Llamada al empezar

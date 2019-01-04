@@ -3,6 +3,9 @@ package com.josalv.mycars;
 import android.net.Uri;
 import android.provider.BaseColumns;
 
+/**
+ * Descripción de la base de datos que contendrá los coches.
+ */
 public class CarContract {
 
     public static final String DB_NAME = "mycars.db";

@@ -7,15 +7,18 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import static android.content.ContentValues.TAG;
 
+/**
+ * Fachada de la base de datos. Permite obtener los coches, crear nuevos, o borrarlos.
+ */
 public class DbHelper extends SQLiteOpenHelper {
 
     public DbHelper(Context context){
         super(context, CarContract.DB_NAME, null, CarContract.DB_VERSION);
     }
+
     @Override
     public void onCreate(SQLiteDatabase db) {
         String sql = String.format("create table %s (%s int primary key, %s text, %s text, %s text, %s text, %s text)",
@@ -56,9 +59,6 @@ public class DbHelper extends SQLiteOpenHelper {
     public static ArrayList<Car> getAllCars(SQLiteDatabase db) {
 
 
-        System.out.println("\n\n\n GET ALL CARS!! \n\n\n");
-
-
         Cursor cursor =  db.rawQuery("SELECT * FROM car",null );
         ArrayList<Car> cars = new ArrayList();
 
@@ -69,8 +69,6 @@ public class DbHelper extends SQLiteOpenHelper {
                     cursor.getString(4),
                     cursor.getString(5)));
         }
-
-        System.out.println("\n\n\nEL TAMAÑO DE LA BASE DE DATOS ES DE " + cars.size() + " COCHES! \n\n\n");
 
         return cars;
     }

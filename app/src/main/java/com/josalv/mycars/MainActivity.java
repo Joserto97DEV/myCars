@@ -11,7 +11,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.list_item_car);
 
         setContentView(R.layout.activity_car_list);
 
@@ -22,10 +21,12 @@ public class MainActivity extends AppCompatActivity {
 
         lvItems = (ListView) findViewById(R.id.lvItems);
         adaptador = new Adaptador(this, DbHelper.getAllCars(db));
-        //adaptador = new Adaptador(this, getCar());
         lvItems.setAdapter(adaptador);
-        // Comprobar si la actividad ya ha sido creada con anterioridad
-        /* if (savedInstanceState == null) {
+
+         //  FRAGMENT DE AÑADIR NUEVO COCHE
+
+         /*
+         if (savedInstanceState == null) {
             // Crear un fragment
             AddCarFragment fragment = new AddCarFragment(); getFragmentManager()
                     .beginTransaction()
