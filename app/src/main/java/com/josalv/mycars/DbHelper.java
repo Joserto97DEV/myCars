@@ -45,8 +45,8 @@ public class DbHelper extends SQLiteOpenHelper {
 
     public static void saveDb(SQLiteDatabase db, Car car) {
         //INSERTAR BD
-        String sql = "INSERT INTO car (MARCA, MODELO, TIPO, COLOR, DESCRIPCION) VALUES " +
-                "('" + car.getMarca() + "','" + car.getModelo() + "','"+car.getTipo()+"','"+car.getColor()+"','"+car.getDescripcion()+"') ";
+        String sql = "INSERT INTO car (_id, MARCA, MODELO, TIPO, COLOR, DESCRIPCION) VALUES " +
+                "('"+car.getId()+ "','" + car.getMarca() + "','" + car.getModelo() + "','"+car.getTipo()+"','"+car.getColor()+"','"+car.getDescripcion()+"') ";
         db.execSQL(sql);
     }
 
@@ -80,7 +80,7 @@ public class DbHelper extends SQLiteOpenHelper {
      * @return Car
      */
     public static Car findByID(SQLiteDatabase db, String id){
-        String churroSQL = "SELECT * FROM car WHERE car.ID == '"+ id +"';";
+        String churroSQL = "SELECT * FROM car WHERE car._id == '"+ id +"'";
         Cursor cursor =  db.rawQuery(churroSQL,null );
         Car car = null;
 
@@ -91,9 +91,24 @@ public class DbHelper extends SQLiteOpenHelper {
                     cursor.getString(3),
                     cursor.getString(4),
                     cursor.getString(5));
+            //saveDb(db,car);
         }
         return car;
     }
+    /**
+     * Elimina el coche que esté en una determinada DB con un determinado ID.
+     * @param db
+     * @param id
+     * @return Car
+     */
+    public static void deleteByID(SQLiteDatabase db, String id){
+        String sql = "DELETE FROM car WHERE car._id == '"+ id +"'";
+
+        db.execSQL(sql);
+    }
+
+
+
 
 
 

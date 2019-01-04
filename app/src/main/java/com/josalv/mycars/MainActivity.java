@@ -20,6 +20,17 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        //  FRAGMENT DE AÑADIR NUEVO COCHE
+/*
+
+         if (savedInstanceState == null) {
+            // Crear un fragment
+            AddCarFragment fragment = new AddCarFragment(); getFragmentManager()
+                    .beginTransaction()
+                    .add(android.R.id.content, fragment, fragment.getClass().getSimpleName()).commit();
+        }
+*/
+
         setContentView(R.layout.activity_car_list);
 
         DbHelper cardbh = new DbHelper(this);
@@ -31,16 +42,7 @@ public class MainActivity extends AppCompatActivity {
         adaptador = new Adaptador(this, DbHelper.getAllCars(db));
         lvItems.setAdapter(adaptador);
 
-         //  FRAGMENT DE AÑADIR NUEVO COCHE
 
-
-         /*if (savedInstanceState == null) {
-            // Crear un fragment
-            AddCarFragment fragment = new AddCarFragment(); getFragmentManager()
-                    .beginTransaction()
-                    .add(android.R.id.content, fragment, fragment.getClass().getSimpleName()).commit();
-        }
-        */
 
          // ArrayAdapter<Car> mAdapter = new ArrayAdapter<Car>(MainActivity.this,
          //        android.R.layout.simple_list_item_1,

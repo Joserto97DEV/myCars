@@ -3,6 +3,7 @@ package com.josalv.mycars;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -36,6 +37,9 @@ public class CarDetail extends AppCompatActivity {
         tvColor = (TextView) findViewById(R.id.tvColor);
 
 
+        btnBorrar = (Button) findViewById(R.id.button_add);
+        btnModicar = (Button) findViewById(R.id.button_add);
+
         // Obtenemos el ID item que habiamos clickado
         Bundle bundle = getIntent().getExtras();
         if (bundle != null){
@@ -46,9 +50,10 @@ public class CarDetail extends AppCompatActivity {
         DbHelper dbHelper = new DbHelper(this);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         Car c;
-
+        //Car c= DbHelper.findByID(db, carID);
+        //Car c = new Car("hola","hola","hola","prueba","adios");
         try {
-            c = DbHelper.findByID(db, carID);
+           c = DbHelper.findByID(db, carID);
         } catch (Exception e) {
             c = null;
         }
@@ -60,5 +65,9 @@ public class CarDetail extends AppCompatActivity {
             tvColor.setText(c.getColor());
         }
 
+
+
+
     }
+
 }
