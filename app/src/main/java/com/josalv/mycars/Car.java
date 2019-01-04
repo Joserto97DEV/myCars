@@ -29,6 +29,16 @@ public class Car {
         this.descripcion = descripcion;
     }
 
+    public Car(String id, String marca, String modelo, String tipo, String color, String descripcion) {
+
+        this.id = id;
+        this.marca = marca;
+        this.modelo = modelo;
+        this.tipo = tipo;
+        this.color = color;
+        this.descripcion = descripcion;
+    }
+
     public String getId() {
         return id;
     }

@@ -63,7 +63,8 @@ public class DbHelper extends SQLiteOpenHelper {
         ArrayList<Car> cars = new ArrayList();
 
         while(cursor.moveToNext()) {
-            cars.add(new Car(cursor.getString(1),
+            cars.add(new Car(cursor.getString(0),
+                    cursor.getString(1),
                     cursor.getString(2),
                     cursor.getString(3),
                     cursor.getString(4),
@@ -86,7 +87,8 @@ public class DbHelper extends SQLiteOpenHelper {
 
         if (cursor.moveToFirst()) {
 
-            car = new Car(cursor.getString(1),
+            car = new Car(cursor.getString(0),
+                    cursor.getString(1),
                     cursor.getString(2),
                     cursor.getString(3),
                     cursor.getString(4),
