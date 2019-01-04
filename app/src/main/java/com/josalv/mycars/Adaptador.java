@@ -13,10 +13,14 @@ public class Adaptador extends BaseAdapter {
 
     private ArrayList<Car> listItems;
     private Context context;
+    private static LayoutInflater inflater = null;
+
 
     public Adaptador(Context context, ArrayList<Car> listItems){
         this.context = context;
         this.listItems = listItems;
+
+        inflater = (LayoutInflater)context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
     }
 
     @Override
@@ -40,7 +44,8 @@ public class Adaptador extends BaseAdapter {
         Car item = (Car) getItem(position);
 
         // aquí se crea cada item de la lista
-        convertView = LayoutInflater.from(context).inflate(R.layout.list_item_car, null);
+        //convertView = LayoutInflater.from(context).inflate(R.layout.list_item_car, null);
+        convertView = inflater.inflate(R.layout.list_item_car, null);
         TextView tvMarca = (TextView) convertView.findViewById(R.id.tvMarca);
         TextView tvColor = (TextView) convertView.findViewById(R.id.tvColor);
         TextView tvTipo = (TextView) convertView.findViewById(R.id.tvTipo);
