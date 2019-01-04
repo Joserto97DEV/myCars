@@ -1,5 +1,6 @@
 package com.josalv.mycars;
 
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -18,14 +19,17 @@ public class CarList extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_car_list);
+        Intent intent = new Intent (getApplicationContext(), CarList.class);
+        startActivityForResult(intent, 0);
 
-        DbHelper cardbh = new DbHelper(this);
+       /* DbHelper cardbh = new DbHelper(this);
         SQLiteDatabase db = cardbh.getWritableDatabase();
 
         lvItems = (ListView) findViewById(R.id.lvItems);
         adaptador = new Adaptador(this, DbHelper.getAllCars(db));
         //adaptador = new Adaptador(this, getCar());
         lvItems.setAdapter(adaptador);
+        */
     }
 
 
