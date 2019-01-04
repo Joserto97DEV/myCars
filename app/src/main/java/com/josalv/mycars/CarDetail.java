@@ -27,5 +27,15 @@ public class CarDetail extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_car_detail);
+
+
+        tvMarca = (TextView) findViewById(R.id.textView3);
+
+        // Obtenemos el item que habiamos clickado
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null){
+            tvMarca.setText(bundle.getString("carID"));
+        }
+
     }
 }
