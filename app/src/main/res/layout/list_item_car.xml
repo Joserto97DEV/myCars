@@ -12,36 +12,79 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="7dp"
+        android:orientation="vertical"
+        android:theme="@android:style/Theme.DeviceDefault.Light.DarkActionBar"
+        android:visibility="visible">
 
-        <TextView
-            android:id="@+id/tvMarca"
-            android:layout_width="64dp"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:text="New Text"
-            android:textAppearance="?textAppearanceListItem"
-            tools:text="Seat" />
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/tvTipo"
-            android:layout_width="72dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_centerVertical="true"
-            android:text="New Text"
-            android:textAppearance="?textAppearanceListItem"
-            tools:text="berlina" />
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="23dp"
+                android:layout_weight="1" />
 
-        <TextView
-            android:id="@+id/tvColor"
-            android:layout_width="61dp"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginEnd="-1dp"
-            android:text="New Text"
-            android:textAppearance="?textAppearanceListItem"
-            tools:text="Rojo" />
+            <TextView
+                android:id="@+id/tvMarca"
+                android:layout_width="128dp"
+                android:layout_height="wrap_content"
+                android:text="New Text"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textAppearance="?textAppearanceListItem"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:text="Seat" />
+
+            <TextView
+                android:id="@+id/tvColor"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="-1dp"
+                android:text="New Text"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textAppearance="?textAppearanceListItem"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:text="Rojo" />
+
+            <TextView
+                android:id="@+id/tvTipo"
+                android:layout_width="123dp"
+                android:layout_height="wrap_content"
+                android:text="New Text"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textAppearance="?textAppearanceListItem"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:text="berlina" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="22dp"
+                android:layout_weight="1" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tvDescripcion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/tvDescripcion"
+                android:textAlignment="center" />
+        </TableRow>
+
     </LinearLayout>
 
 </RelativeLayout>

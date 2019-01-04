@@ -20,6 +20,7 @@ public class Car {
 
     public Car(String marca, String modelo, String tipo, String color, String descripcion) {
         UUID id_aleatoria=UUID.randomUUID();
+
         this.id = id_aleatoria.toString();
         this.marca = marca;
         this.modelo = modelo;

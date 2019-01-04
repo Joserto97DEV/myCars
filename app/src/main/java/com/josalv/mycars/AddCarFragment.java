@@ -83,7 +83,7 @@ public class AddCarFragment extends Fragment implements View.OnClickListener, Te
 
         Log.d(TAG, "onClicked");
 
-        if(sbrand.isEmpty()||smodel.isEmpty()||scolor.isEmpty()||sdescription.isEmpty()){
+        if(sbrand.isEmpty() || smodel.isEmpty() || scolor.isEmpty() || sdescription.isEmpty()){
             Toast.makeText(AddCarFragment.this.getActivity(), "Es necesario rellenar todos los campos", Toast.LENGTH_LONG).show();
         } else {
             Car car = new Car(sbrand,smodel,stipo,scolor,sdescription);
@@ -103,7 +103,7 @@ public class AddCarFragment extends Fragment implements View.OnClickListener, Te
         @Override
         protected String doInBackground(String... params) {
             try {
-            Thread.sleep(2000);}
+                Thread.sleep(1000);}
             catch(Exception e){
 
             }

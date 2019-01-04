@@ -12,5 +12,6 @@
     <string name="hello">hello!</string>
     <string name="askname">what\'s your name?</string>
     <string name="come_on">COME ON!</string>
+    <string name="tvDescripcion">El coche este del charlie</string>
 
 </resources>

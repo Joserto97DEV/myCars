@@ -25,13 +25,13 @@ public class MainActivity extends AppCompatActivity {
         //adaptador = new Adaptador(this, getCar());
         lvItems.setAdapter(adaptador);
         // Comprobar si la actividad ya ha sido creada con anterioridad
-        //if (savedInstanceState == null) {
+        /* if (savedInstanceState == null) {
             // Crear un fragment
-           // AddCarFragment fragment = new AddCarFragment(); getFragmentManager()
-            //        .beginTransaction()
-          //          .add(android.R.id.content, fragment, fragment.getClass().getSimpleName()).commit();
-        //}
-
+            AddCarFragment fragment = new AddCarFragment(); getFragmentManager()
+                    .beginTransaction()
+                    .add(android.R.id.content, fragment, fragment.getClass().getSimpleName()).commit();
+        }
+        */
     }
 
 }

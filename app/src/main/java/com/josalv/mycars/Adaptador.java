@@ -44,15 +44,16 @@ public class Adaptador extends BaseAdapter {
         Car item = (Car) getItem(position);
 
         // aquí se crea cada item de la lista
-        //convertView = LayoutInflater.from(context).inflate(R.layout.list_item_car, null);
         convertView = inflater.inflate(R.layout.list_item_car, null);
         TextView tvMarca = (TextView) convertView.findViewById(R.id.tvMarca);
         TextView tvColor = (TextView) convertView.findViewById(R.id.tvColor);
         TextView tvTipo = (TextView) convertView.findViewById(R.id.tvTipo);
+        TextView tvDescripcion = (TextView) convertView.findViewById(R.id.tvDescripcion);
 
         tvMarca.setText(item.getMarca());
         tvColor.setText(item.getColor());
         tvTipo.setText(item.getTipo());
+        tvDescripcion.setText(item.getDescripcion());
 
         return convertView;
     }
