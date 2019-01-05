@@ -24,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:text="identificador de coche"
         android:textAllCaps="true"
@@ -68,8 +68,9 @@
         android:text="color"
         android:textAllCaps="true"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvMarca" />
+        app:layout_constraintTop_toBottomOf="@+id/tvModelo" />
 
     <TextView
         android:id="@+id/tvColor"
@@ -107,5 +108,109 @@
         app:layout_constraintBottom_toTopOf="@+id/btnDelete"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/modeloCarDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:text="modelo"
+        android:textAllCaps="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvMarca" />
+
+    <TextView
+        android:id="@+id/tvModelo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="modelo1"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/modeloCarDetail" />
+
+    <TextView
+        android:id="@+id/descripcionCarDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:text="descripcion"
+        android:textAllCaps="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvColor" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="descripcion1"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/descripcionCarDetail" />
+
+    <EditText
+        android:id="@+id/etMarca"
+        android:layout_width="257dp"
+        android:layout_height="37dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="marca1"
+        android:textSize="10sp"
+        android:visibility="invisible"
+        app:layout_constraintTop_toBottomOf="@+id/marcaCarDetail"
+        tools:layout_editor_absoluteX="64dp" />
+
+    <EditText
+        android:id="@+id/etModelo"
+        android:layout_width="257dp"
+        android:layout_height="37dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="modelo1"
+        android:textSize="10sp"
+        android:visibility="invisible"
+        app:layout_constraintTop_toBottomOf="@+id/modeloCarDetail"
+        tools:layout_editor_absoluteX="64dp" />
+
+    <EditText
+        android:id="@+id/etColor"
+        android:layout_width="257dp"
+        android:layout_height="37dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="color1"
+        android:textSize="10sp"
+        android:visibility="invisible"
+        app:layout_constraintTop_toBottomOf="@+id/colorCarDetail"
+        tools:layout_editor_absoluteX="64dp" />
+
+    <EditText
+        android:id="@+id/etDescripcion"
+        android:layout_width="257dp"
+        android:layout_height="37dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="descripcion1"
+        android:textSize="10sp"
+        android:visibility="invisible"
+        app:layout_constraintTop_toBottomOf="@+id/descripcionCarDetail"
+        tools:layout_editor_absoluteX="64dp" />
 
 </android.support.constraint.ConstraintLayout>

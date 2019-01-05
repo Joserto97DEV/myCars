@@ -9,5 +9,6 @@
     <string name="tipo4">Deportivo</string>
     <string name="tipo5">Berlina</string>
     <string name="descripcion">Descripcion</string>
+    <string name="nuevo_carro">Nuevo carro</string>
 
 </resources>

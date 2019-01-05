@@ -14,7 +14,8 @@
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="7dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginBottom="3dp"
         android:orientation="vertical"
         android:theme="@android:style/Theme.DeviceDefault.Light.DarkActionBar"
         android:visibility="visible">
@@ -41,6 +42,18 @@
                 tools:text="Marca" />
 
             <TextView
+                android:id="@+id/tvModelo"
+                android:layout_width="123dp"
+                android:layout_height="wrap_content"
+                android:text="New Text"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textAppearance="?textAppearanceListItem"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:text="Modelo" />
+
+            <TextView
                 android:id="@+id/tvColor"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
@@ -52,18 +65,6 @@
                 android:textSize="18sp"
                 android:textStyle="bold"
                 tools:text="Color" />
-
-            <TextView
-                android:id="@+id/tvTipo"
-                android:layout_width="123dp"
-                android:layout_height="wrap_content"
-                android:text="New Text"
-                android:textAlignment="center"
-                android:textAllCaps="true"
-                android:textAppearance="?textAppearanceListItem"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                tools:text="Tipo" />
 
             <Space
                 android:layout_width="wrap_content"
