@@ -17,10 +17,13 @@ public class CarList extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
-        /*setContentView(R.layout.activity_car_list);
+        setContentView(R.layout.activity_car_list);
         Intent intent = new Intent (getApplicationContext(), CarList.class);
-        startActivityForResult(intent, 0);*/
+        startActivityForResult(intent, 0);
+
+
     }
 
 

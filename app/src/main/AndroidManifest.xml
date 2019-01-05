@@ -20,7 +20,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".CarList" />
-        <activity android:name=".CarDetail"></activity>
+        <activity android:name=".CarDetail" />
+        <activity android:name=".AddCarActivity"></activity>
     </application>
 
 </manifest>
