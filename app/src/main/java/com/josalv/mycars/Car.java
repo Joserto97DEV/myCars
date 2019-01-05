@@ -19,8 +19,8 @@ public class Car {
 
 
     public Car(String marca, String modelo, String tipo, String color, String descripcion) {
-        UUID id_aleatoria=UUID.randomUUID();
-        String idtemp= id_aleatoria.toString();
+        UUID id_aleatoria = UUID.randomUUID();
+        String idtemp = id_aleatoria.toString();
         this.id = idtemp;
         this.marca = marca;
         this.modelo = modelo;
@@ -37,6 +37,7 @@ public class Car {
         this.tipo = tipo;
         this.color = color;
         this.descripcion = descripcion;
+
     }
 
     public String getId() {

@@ -16,20 +16,21 @@ public class CarDetail extends AppCompatActivity {
 
     private Car c;
     private String carID;
-    private int edit_or_save = 0;
 
-    private TextView tvID;
-    private TextView tvMarca;
-    private TextView tvModelo;
-    private TextView tvColor;
-    private TextView tvDescripcion;
-    private TextView[] tvs = {tvMarca, tvModelo, tvColor, tvDescripcion};
+    int edit_or_save = 0;
 
-    private EditText etMarca;
-    private EditText etModelo;
-    private EditText etColor;
-    private EditText etDescripcion;
-    private EditText[] ets = {etMarca, etModelo, etColor, etDescripcion};
+     TextView tvID;
+     TextView tvMarca;
+     TextView tvModelo;
+     TextView tvColor;
+     TextView tvDescripcion;
+     TextView[] tvs = {tvMarca, tvModelo, tvColor, tvDescripcion};
+
+     EditText etMarca;
+     EditText etModelo;
+     EditText etColor;
+     EditText etDescripcion;
+     EditText[] ets = {etMarca, etModelo, etColor, etDescripcion};
 
 
     private Button btnDelete;
@@ -86,7 +87,9 @@ public class CarDetail extends AppCompatActivity {
             tvMarca.setText(c.getMarca());
             tvModelo.setText(c.getModelo());
             tvColor.setText(c.getColor());
-            //tvDescripcion.setText(c.getDescripcion());
+
+            Toast.makeText(CarDetail.this, c.getDescripcion(), Toast.LENGTH_SHORT).show();
+            tvDescripcion.setText(c.getDescripcion());
 
             // En los editables
             etMarca.setText(c.getMarca());
@@ -145,7 +148,7 @@ public class CarDetail extends AppCompatActivity {
         // Asignamos una funcion al boton de borrar:
         btnDelete.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
-                if(edit_or_save == 1) {
+                if(edit_or_save == 0) {
                     try {
                         // Borramos el coche
                         DbHelper.deleteByID(db, carID);
@@ -171,10 +174,10 @@ public class CarDetail extends AppCompatActivity {
         if (edit_or_save == 0){
             // Ponemos visibilidad a los editables
             for(TextView t : tvs){
-                t.setVisibility(View.INVISIBLE);
+                // t.setVisibility(View.INVISIBLE);
             }
             for(EditText e : ets){
-                e.setVisibility(View.VISIBLE);
+                //e.setVisibility(View.VISIBLE);
             }
             btnEdit.setText("Confirmar");
             btnDelete.setText("Cancelar");
@@ -182,10 +185,10 @@ public class CarDetail extends AppCompatActivity {
         } else {
             // Ponemos visibilidad a los fijos
             for(TextView t : tvs){
-                t.setVisibility(View.VISIBLE);
+                // t.setVisibility(View.VISIBLE);
             }
             for(EditText e : ets){
-                e.setVisibility(View.INVISIBLE);
+                //e.setVisibility(View.INVISIBLE);
             }
             btnEdit.setText("Editar");
             btnDelete.setText("Borrar");

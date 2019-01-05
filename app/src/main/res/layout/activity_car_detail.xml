@@ -152,13 +152,13 @@
         app:layout_constraintTop_toBottomOf="@+id/tvColor" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/tvDescripcion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:text="descripcion1"
+        android:text="@string/descripcion1"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.51"
@@ -169,48 +169,60 @@
         android:id="@+id/etMarca"
         android:layout_width="257dp"
         android:layout_height="37dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="marca1"
         android:textSize="10sp"
         android:visibility="invisible"
-        app:layout_constraintTop_toBottomOf="@+id/marcaCarDetail"
-        tools:layout_editor_absoluteX="64dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/marcaCarDetail" />
 
     <EditText
         android:id="@+id/etModelo"
         android:layout_width="257dp"
         android:layout_height="37dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="modelo1"
         android:textSize="10sp"
         android:visibility="invisible"
-        app:layout_constraintTop_toBottomOf="@+id/modeloCarDetail"
-        tools:layout_editor_absoluteX="64dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/modeloCarDetail" />
 
     <EditText
         android:id="@+id/etColor"
-        android:layout_width="257dp"
+        android:layout_width="289dp"
         android:layout_height="37dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="color1"
         android:textSize="10sp"
         android:visibility="invisible"
-        app:layout_constraintTop_toBottomOf="@+id/colorCarDetail"
-        tools:layout_editor_absoluteX="64dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/colorCarDetail" />
 
     <EditText
         android:id="@+id/etDescripcion"
         android:layout_width="257dp"
         android:layout_height="37dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="descripcion1"
         android:textSize="10sp"
         android:visibility="invisible"
-        app:layout_constraintTop_toBottomOf="@+id/descripcionCarDetail"
-        tools:layout_editor_absoluteX="64dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/descripcionCarDetail" />
 
 </android.support.constraint.ConstraintLayout>
