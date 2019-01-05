@@ -21,7 +21,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String sql = String.format("create table %s (%s int primary key, %s text, %s text, %s text, %s text, %s text)",
+        String sql = String.format("create table %s (%s text primary key, %s text, %s text, %s text, %s text, %s text)",
                 CarContract.TABLE,
                 CarContract.Column.ID,
                 CarContract.Column.MARCA,
@@ -81,7 +81,7 @@ public class DbHelper extends SQLiteOpenHelper {
      * @return Car
      */
     public static Car findByID(SQLiteDatabase db, String id){
-        String churroSQL = "SELECT * FROM car WHERE car._id == '"+ id +"'";
+        String churroSQL = "SELECT * FROM car c WHERE c._id == '"+ id +"'";
         Cursor cursor =  db.rawQuery(churroSQL,null );
         Car car = null;
 

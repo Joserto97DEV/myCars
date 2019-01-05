@@ -21,8 +21,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         //  FRAGMENT DE AÑADIR NUEVO COCHE
-/*
 
+/*
          if (savedInstanceState == null) {
             // Crear un fragment
             AddCarFragment fragment = new AddCarFragment(); getFragmentManager()

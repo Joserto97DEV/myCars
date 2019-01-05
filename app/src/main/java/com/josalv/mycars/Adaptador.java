@@ -53,7 +53,7 @@ public class Adaptador extends BaseAdapter {
         tvMarca.setText(item.getMarca());
         tvColor.setText(item.getColor());
         tvTipo.setText(item.getTipo());
-        tvDescripcion.setText(item.getDescripcion());
+        tvDescripcion.setText(item.getDescripcion() + ", " + item.getId());
 
         return convertView;
     }

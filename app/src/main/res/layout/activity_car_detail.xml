@@ -85,19 +85,27 @@
         app:layout_constraintTop_toBottomOf="@+id/colorCarDetail" />
 
     <Button
-        android:id="@+id/buttonclear"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Clear"
-        tools:layout_editor_absoluteX="276dp"
-        tools:layout_editor_absoluteY="446dp" />
+        android:id="@+id/btnDelete"
+        android:layout_width="312dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="4dp"
+        android:text="borrar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.446"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/buttonedit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="edit"
-        tools:layout_editor_absoluteX="183dp"
-        tools:layout_editor_absoluteY="446dp" />
+        android:id="@+id/btnEdit"
+        android:layout_width="314dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="editar"
+        app:layout_constraintBottom_toTopOf="@+id/btnDelete"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
