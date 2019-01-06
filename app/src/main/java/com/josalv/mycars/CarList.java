@@ -23,7 +23,6 @@ public class CarList extends AppCompatActivity {
         Intent intent = new Intent (getApplicationContext(), CarList.class);
         startActivityForResult(intent, 0);
 
-
     }
 
 

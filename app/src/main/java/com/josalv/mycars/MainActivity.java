@@ -40,12 +40,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-/*
-        // Crear un fragment
-        AddCarFragment fragment = new AddCarFragment(); getFragmentManager()
-                .beginTransaction()
-                .add(android.R.id.content, fragment, fragment.getClass().getSimpleName()).commit();
-*/
 
         setContentView(R.layout.activity_car_list);
 
@@ -58,9 +52,6 @@ public class MainActivity extends AppCompatActivity {
         lvItems = (ListView) findViewById(R.id.lvItems);
         adaptador = new Adaptador(this, DbHelper.getAllCars(db));
         lvItems.setAdapter(adaptador);
-
-
-
 
         lvItems.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

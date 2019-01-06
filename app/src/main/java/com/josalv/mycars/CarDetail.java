@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,7 +21,6 @@ public class CarDetail extends AppCompatActivity {
 
     private int edit_or_save = 0;
 
-    private TextView tvID;
     private TextView tvMarca;
     private TextView tvModelo;
     private TextView tvColor;
@@ -48,7 +49,6 @@ public class CarDetail extends AppCompatActivity {
         setContentView(R.layout.activity_car_detail);
 
         // Declaramos los elementos de texto:
-        tvID          = (TextView) findViewById(R.id.tvID);
         tvMarca       = (TextView) findViewById(R.id.tvMarca);
         tvModelo      = (TextView) findViewById(R.id.tvModelo);
         tvColor       = (TextView) findViewById(R.id.tvColor);
@@ -85,19 +85,16 @@ public class CarDetail extends AppCompatActivity {
         if (c!=null) {
 
             // En los label
-            tvID.setText(c.getId());
             tvMarca.setText(c.getMarca());
             tvModelo.setText(c.getModelo());
             tvColor.setText(c.getColor());
-
-            Toast.makeText(CarDetail.this, c.getDescripcion(), Toast.LENGTH_SHORT).show();
             tvDescripcion.setText(c.getDescripcion());
 
             // En los editables
             etMarca.setText(c.getMarca());
             etModelo.setText(c.getModelo());
             etColor.setText(c.getColor());
-            //etDescripcion.setText(c.getDescripcion());
+            etDescripcion.setText(c.getDescripcion());
 
         }
 
@@ -134,6 +131,9 @@ public class CarDetail extends AppCompatActivity {
 
                         // Volvemos al estado inicial
                         changeToEdit();
+
+                        // Informamos que se ha actualizado
+                        Toast.makeText(CarDetail.this, "Actualizado", Toast.LENGTH_SHORT).show();
 
                         // Volvemos al ActivityMain
                         Intent intent = new Intent(CarDetail.this, MainActivity.class);
@@ -198,4 +198,26 @@ public class CarDetail extends AppCompatActivity {
             edit_or_save = 0;
         }
     }
+
+
+    // Añadimos las opciolnes de menú
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.carList:
+                startActivity(new Intent(this, MainActivity.class));
+                return true;
+            case R.id.addCar:
+                startActivity(new Intent(this, AddCarActivity.class));
+                return true;
+            default:
+                return false;
+        }
+    }
+
 }
