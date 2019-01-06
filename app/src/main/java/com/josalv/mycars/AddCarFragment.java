@@ -1,6 +1,7 @@
 package com.josalv.mycars;
 
 
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.text.TextWatcher;
@@ -97,6 +98,7 @@ public class AddCarFragment extends Fragment implements View.OnClickListener, Te
             progressBar.setVisibility(View.VISIBLE);
             button_add.setVisibility(View.INVISIBLE);
             new PostTask().execute(sbrand, smodel, scolor, sdescription);
+            startActivity(new Intent(getActivity(), MainActivity.class));
         }
 
     }
