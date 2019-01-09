@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,6 +34,7 @@ public class CarDetail extends AppCompatActivity {
     private EditText etDescripcion;
     private EditText[] ets = new EditText[4];
 
+    private ImageView imgTipo;
 
     private Button btnDelete;
     private Button btnEdit;
@@ -66,6 +68,9 @@ public class CarDetail extends AppCompatActivity {
         btnDelete = (Button) findViewById(R.id.btnDelete);
         btnEdit = (Button) findViewById(R.id.btnEdit);
 
+        //Obtenemos la imagen y la declaramos
+        imgTipo = (ImageView) findViewById(R.id.imageView);
+
         // Obtenemos el ID item que habiamos clickado
         Bundle bundle = getIntent().getExtras();
         if (bundle != null){
@@ -95,6 +100,31 @@ public class CarDetail extends AppCompatActivity {
             etModelo.setText(c.getModelo());
             etColor.setText(c.getColor());
             etDescripcion.setText(c.getDescripcion());
+
+            //La foto
+            String tipo = c.getTipo();
+
+            if(tipo.equals("Berlina")){
+                imgTipo.setImageResource(R.drawable.berlina);
+            }
+
+            else if(tipo.equals("Deportivo")){
+                imgTipo.setImageResource(R.drawable.deportivo);
+            }
+
+            else if(tipo.equals("Monovolumen")){
+                imgTipo.setImageResource(R.drawable.monovolumen);
+            }
+
+            else if(tipo.equals("Ranchera")){
+                imgTipo.setImageResource(R.drawable.ranchera);
+            }
+
+            else{
+                imgTipo.setImageResource(R.drawable.todoterreno);
+
+            }
+
 
         }
 
