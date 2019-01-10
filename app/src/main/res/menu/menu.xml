@@ -11,4 +11,8 @@
         android:id="@+id/carList"
         android:icon="@android:drawable/ic_menu_delete"
         android:title="List of cars added" />
+    <item
+        android:id="@+id/info"
+        android:icon="@android:drawable/ic_menu_delete"
+        android:title="Information" />
 </menu>

@@ -1,6 +1,7 @@
 package com.josalv.mycars;
 
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -28,8 +29,22 @@ public class NoCarsActivity extends AppCompatActivity {
             case R.id.addCar:
                 startActivity(new Intent(this, AddCarActivity.class));
                 return true;
+            case R.id.info:
+                createSimpleDialog().show();
+                return true;
             default:
                 return false;
         }
+    }
+
+    /**
+     * Crea un nuevo mensaje de alerta. Se muestra con show().
+     * @return Nuevo mensaje de alerta
+     */
+    public AlertDialog createSimpleDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Code with love by")
+                .setMessage("Alvaro Velasco & Jose Alberto del Val");
+        return builder.create();
     }
 }
