@@ -11,5 +11,6 @@
     <string name="descripcion">Descripcion</string>
     <string name="nuevo_carro">Nuevo carro</string>
     <string name="descripcion1">descripcion1</string>
+    <string name="todo">TODO</string>
 
 </resources>

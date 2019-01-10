@@ -14,6 +14,8 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
     private Button btnAdd;
@@ -41,29 +43,34 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_car_list);
-
         DbHelper cardbh = new DbHelper(this);
         SQLiteDatabase db = cardbh.getWritableDatabase();
+        List<Car> cars = DbHelper.getAllCars(db);
 
-        final ListView lvItems;
-        final Adaptador adaptador;
+        if (!cars.isEmpty()) {
+            setContentView(R.layout.activity_car_list);
 
-        lvItems = (ListView) findViewById(R.id.lvItems);
-        adaptador = new Adaptador(this, DbHelper.getAllCars(db));
-        lvItems.setAdapter(adaptador);
+            final ListView lvItems;
+            final Adaptador adaptador;
 
-        lvItems.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent = new Intent(MainActivity.this, CarDetail.class);
-                Car currentCar = (Car) adaptador.getItem(i);
+            lvItems = (ListView) findViewById(R.id.lvItems);
 
-                intent.putExtra("carID", currentCar.getId());
-                startActivity(intent);
-            }
-        });
+            adaptador = new Adaptador(this, DbHelper.getAllCars(db));
+            lvItems.setAdapter(adaptador);
 
+            lvItems.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                    Intent intent = new Intent(MainActivity.this, CarDetail.class);
+                    Car currentCar = (Car) adaptador.getItem(i);
+
+                    intent.putExtra("carID", currentCar.getId());
+                    startActivity(intent);
+                }
+            });
+        } else {
+            setContentView(R.layout.activity_no_cars);
+        }
     }
 
 }
