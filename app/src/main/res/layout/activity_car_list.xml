@@ -5,11 +5,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CarList">
+
+    <SearchView
+        android:id="@+id/search_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/lvItems" />
+
     <ListView
         android:id="@+id/lvItems"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:divider="@null">
+        android:layout_marginTop="40dp"
+        android:divider="@null"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp">
 
     </ListView>
 </android.support.constraint.ConstraintLayout>

@@ -13,11 +13,12 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.Toast;
 
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements SearchView.OnQueryTextListener{
 
 
     @Override
@@ -65,12 +66,19 @@ public class MainActivity extends AppCompatActivity {
             setContentView(R.layout.activity_car_list);
 
             final ListView lvItems;
+            final SearchView search;
             final Adaptador adaptador;
 
             lvItems = (ListView) findViewById(R.id.lvItems);
+            search=(SearchView) findViewById(R.id.search_view);
+
 
             adaptador = new Adaptador(this, DbHelper.getAllCars(db));
             lvItems.setAdapter(adaptador);
+
+
+
+
 
             lvItems.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
@@ -87,4 +95,14 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+
+    @Override
+    public boolean onQueryTextSubmit(String query) {
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextChange(String newText) {
+        return false;
+    }
 }

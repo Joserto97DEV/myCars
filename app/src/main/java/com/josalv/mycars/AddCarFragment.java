@@ -126,7 +126,7 @@ public class AddCarFragment extends Fragment implements View.OnClickListener, Te
             super.onPostExecute(result);
             progressBar.setVisibility(View.GONE);
             button_add.setVisibility(View.VISIBLE);
-            Toast.makeText(AddCarFragment.this.getActivity(), "Añadido correctamente.", Toast.LENGTH_LONG).show();
+            Toast.makeText(AddCarFragment.this.getActivity(), "Added correctly!", Toast.LENGTH_LONG).show();
 
         }
     }
